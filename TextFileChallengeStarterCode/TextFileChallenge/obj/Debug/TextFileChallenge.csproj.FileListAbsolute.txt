@@ -10,3 +10,14 @@ C:\Users\Tim\Source\Repos\TextFileChallenge\TextFileChallenge\obj\Debug\TextFile
 C:\Users\Tim\Source\Repos\TextFileChallenge\TextFileChallenge\obj\Debug\TextFileChallenge.pdb
 C:\Users\Tim\Source\Repos\TextFileChallenge\TextFileChallenge\bin\Debug\AdvancedDataSet.csv
 C:\Users\Tim\Source\Repos\TextFileChallenge\TextFileChallenge\bin\Debug\StandardDataSet.csv
+C:\Code_Projects\TimCorey\TextFileChallengeStarterCode\TextFileChallenge\bin\Debug\AdvancedDataSet.csv
+C:\Code_Projects\TimCorey\TextFileChallengeStarterCode\TextFileChallenge\bin\Debug\StandardDataSet.csv
+C:\Code_Projects\TimCorey\TextFileChallengeStarterCode\TextFileChallenge\bin\Debug\TextFileChallenge.exe.config
+C:\Code_Projects\TimCorey\TextFileChallengeStarterCode\TextFileChallenge\bin\Debug\TextFileChallenge.exe
+C:\Code_Projects\TimCorey\TextFileChallengeStarterCode\TextFileChallenge\bin\Debug\TextFileChallenge.pdb
+C:\Code_Projects\TimCorey\TextFileChallengeStarterCode\TextFileChallenge\obj\Debug\TextFileChallenge.csprojAssemblyReference.cache
+C:\Code_Projects\TimCorey\TextFileChallengeStarterCode\TextFileChallenge\obj\Debug\TextFileChallenge.ChallengeForm.resources
+C:\Code_Projects\TimCorey\TextFileChallengeStarterCode\TextFileChallenge\obj\Debug\TextFileChallenge.Properties.Resources.resources
+C:\Code_Projects\TimCorey\TextFileChallengeStarterCode\TextFileChallenge\obj\Debug\TextFileChallenge.csproj.GenerateResource.cache
+C:\Code_Projects\TimCorey\TextFileChallengeStarterCode\TextFileChallenge\obj\Debug\TextFileChallenge.exe
+C:\Code_Projects\TimCorey\TextFileChallengeStarterCode\TextFileChallenge\obj\Debug\TextFileChallenge.pdb
