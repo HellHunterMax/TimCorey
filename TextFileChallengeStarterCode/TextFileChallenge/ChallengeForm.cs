@@ -15,6 +15,8 @@ namespace TextFileChallenge
     {
         BindingList<UserModel> users = new BindingList<UserModel>();
         public static string DataSet = @".\StandardDataSet.csv";
+        List<string[]> Data;
+        string[] ListOrder;
 
         public ChallengeForm()
         {
@@ -30,8 +32,8 @@ namespace TextFileChallenge
             //FirstName,LastName,Age,IsAlive
             var file = new FileStream(DataSet, FileMode.Open);
             var reader = new StreamReader(file);
-            List<string[]> Data = new List<string[]>();
-            string[] ListOrder = reader.ReadLine().Split(',');
+            Data = new List<string[]>();
+            ListOrder = reader.ReadLine().Split(',');
 
             while (!reader.EndOfStream)
             {
@@ -40,12 +42,6 @@ namespace TextFileChallenge
             reader.Close();
             foreach (string[] data in Data)
             {
-                /*
-                 * bool check = true;
-                    Console.WriteLine(check ? "Checked" : "Not checked");  // output: Checked
-
-                    Console.WriteLine(false ? "Checked" : "Not checked");  // output: Not checked
-                */
                 UserModel m = new UserModel() { FirstName = data[0], LastName = data[1], Age = int.Parse(data[2]), IsAlive = (int.Parse(data[3]) == 1)};
                 users.Add(m);
             }
@@ -57,6 +53,25 @@ namespace TextFileChallenge
         {
             usersListBox.DataSource = users;
             usersListBox.DisplayMember = nameof(UserModel.DisplayText);
+        }
+
+        private void addUserButton_Click(object sender, EventArgs e)
+        {
+            UserModel m;
+            bool finished = false;
+            while(!finished)
+            {
+                try
+                {
+                    m = new UserModel() { FirstName = firstNameText.Text, LastName = lastNameText.Text, Age = (int)agePicker.Value, IsAlive = isAliveCheckbox.Checked };
+                    finished = true;
+                    users.Add(m);
+                }
+                catch
+                {
+                    MessageBox.Show("Please Enter Correct", "Error", MessageBoxButtons.OK);
+                }
+            }
         }
     }
 }
