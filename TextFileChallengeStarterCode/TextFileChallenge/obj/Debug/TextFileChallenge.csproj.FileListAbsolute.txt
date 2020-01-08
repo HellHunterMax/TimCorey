@@ -1,0 +1,12 @@
+C:\Users\Tim\Source\Repos\TextFileChallenge\TextFileChallenge\bin\Debug\TextFileChallenge.exe.config
+C:\Users\Tim\Source\Repos\TextFileChallenge\TextFileChallenge\bin\Debug\TextFileChallenge.exe
+C:\Users\Tim\Source\Repos\TextFileChallenge\TextFileChallenge\bin\Debug\TextFileChallenge.pdb
+C:\Users\Tim\Source\Repos\TextFileChallenge\TextFileChallenge\obj\Debug\TextFileChallenge.csprojAssemblyReference.cache
+C:\Users\Tim\Source\Repos\TextFileChallenge\TextFileChallenge\obj\Debug\TextFileChallenge.ChallengeForm.resources
+C:\Users\Tim\Source\Repos\TextFileChallenge\TextFileChallenge\obj\Debug\TextFileChallenge.Properties.Resources.resources
+C:\Users\Tim\Source\Repos\TextFileChallenge\TextFileChallenge\obj\Debug\TextFileChallenge.csproj.GenerateResource.cache
+C:\Users\Tim\Source\Repos\TextFileChallenge\TextFileChallenge\obj\Debug\TextFileChallenge.csproj.CoreCompileInputs.cache
+C:\Users\Tim\Source\Repos\TextFileChallenge\TextFileChallenge\obj\Debug\TextFileChallenge.exe
+C:\Users\Tim\Source\Repos\TextFileChallenge\TextFileChallenge\obj\Debug\TextFileChallenge.pdb
+C:\Users\Tim\Source\Repos\TextFileChallenge\TextFileChallenge\bin\Debug\AdvancedDataSet.csv
+C:\Users\Tim\Source\Repos\TextFileChallenge\TextFileChallenge\bin\Debug\StandardDataSet.csv
