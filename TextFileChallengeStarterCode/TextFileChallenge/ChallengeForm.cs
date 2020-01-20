@@ -42,8 +42,11 @@ namespace TextFileChallenge
             reader.Close();
             foreach (string[] data in Data)
             {
-                UserModel m = new UserModel() { FirstName = data[0], LastName = data[1], Age = int.Parse(data[2]), IsAlive = (int.Parse(data[3]) == 1)};
-                users.Add(m);
+                if (data[0] != "")
+                {
+                    users.Add(new UserModel() { FirstName = data[0], LastName = data[1], Age = int.Parse(data[2]), IsAlive = int.Parse(data[3]) == 1 });
+                }
+                
             }
 
 
@@ -72,6 +75,23 @@ namespace TextFileChallenge
                     MessageBox.Show("Please Enter Correct", "Error", MessageBoxButtons.OK);
                 }
             }
+        }
+
+        private void saveListButton_Click(object sender, EventArgs e)
+        {
+            var file = new FileStream(DataSet, FileMode.Create);
+            var writer = new StreamWriter(file);
+
+            writer.Write(ListOrder[0] + "," + ListOrder[1] + "," + ListOrder[2] + "," + ListOrder[3]);
+            writer.WriteLine();
+            
+
+            foreach(UserModel user in users)
+            {
+
+                writer.WriteLine(user.FirstName + "," + user.LastName + "," + Convert.ToString(user.Age) + "," + Convert.ToInt32(user.IsAlive));
+            }
+            writer.Close();
         }
     }
 }
