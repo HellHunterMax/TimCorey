@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -14,7 +15,7 @@ namespace TextFileChallenge
     public partial class ChallengeForm : Form
     {
         BindingList<UserModel> users = new BindingList<UserModel>();
-        public static string DataSet = @".\StandardDataSet.csv";
+        public static string DataSet = @".\AdvancedDataSet.csv";
         List<string[]> Data;
         string[] ListOrder;
 
@@ -44,7 +45,7 @@ namespace TextFileChallenge
             {
                 if (data[0] != "")
                 {
-                    users.Add(new UserModel() { FirstName = data[0], LastName = data[1], Age = int.Parse(data[2]), IsAlive = int.Parse(data[3]) == 1 });
+                    users.Add(new UserModel() { FirstName = data[Array.IndexOf(ListOrder, "FirstName")], LastName = data[Array.IndexOf(ListOrder, "LastName")], Age = int.Parse(data[Array.IndexOf(ListOrder, "Age")]), IsAlive = int.Parse(data[Array.IndexOf(ListOrder, "IsAlive")]) == 1 });
                 }
                 
             }
@@ -85,11 +86,36 @@ namespace TextFileChallenge
             writer.Write(ListOrder[0] + "," + ListOrder[1] + "," + ListOrder[2] + "," + ListOrder[3]);
             writer.WriteLine();
             
-
             foreach(UserModel user in users)
             {
 
-                writer.WriteLine(user.FirstName + "," + user.LastName + "," + Convert.ToString(user.Age) + "," + Convert.ToInt32(user.IsAlive));
+                string sb = "";
+                for (int i = 0; i < 4; i++)
+                {
+                    if (ListOrder[i] == "Age")
+                    {
+                        sb += Convert.ToString(user.Age);
+                    }
+                    else if (ListOrder[i] == "FirstName")
+                    {
+                        sb += user.FirstName;
+                    }
+                    else if (ListOrder[i] == "LastName")
+                    {
+                        sb += user.LastName;
+                    }
+                    else if (ListOrder[i] == "IsAlive")
+                    {
+                        sb += Convert.ToInt32(user.IsAlive);
+                    }
+
+                    if (i < 3)
+                    {
+                        sb += ",";
+                    }
+                }
+                
+                writer.WriteLine(sb);
             }
             writer.Close();
         }
