@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DemoLibrary;
+﻿using DemoLibrary;
+using System;
 
 namespace ConsoleUI
 {
@@ -19,7 +15,7 @@ namespace ConsoleUI
                     var result = paymentProcessor.MakePayment($"Demo{ i }", i);
 
                     if (result == null)
-                    { 
+                    {
                         Console.WriteLine($"Null value for item {i}");
                     }
                     else
@@ -27,9 +23,43 @@ namespace ConsoleUI
                         Console.WriteLine(result.TransactionAmount);
                     }
                 }
-                catch
+                catch (IndexOutOfRangeException e)
                 {
-                    Console.WriteLine($"Payment skipped for payment with {i} items");
+                    if (e.InnerException != null)
+                    {
+                        Console.WriteLine("Skipped invalid record " + e.InnerException.Message);
+                    }
+                    else
+                    {
+                        Console.WriteLine("Skipped invalid record");
+                    }
+                }
+                catch (FormatException e)
+                {
+                    if (i == 5)
+                    {
+                        Console.WriteLine($"Payment skipped for payment with {i} items");
+                    }
+                    else if (e.InnerException != null)
+                    {
+                        Console.WriteLine("Formatting Issue " + e.InnerException.Message);
+                    }
+                    else
+                    {
+                        Console.WriteLine("Formatting Issue");
+                    }
+
+                }
+                catch (Exception e)
+                {
+                    if (e.InnerException != null)
+                    {
+                        Console.WriteLine(e.Message + e.InnerException);
+                    }
+                    else
+                    {
+                        Console.WriteLine(e.Message);
+                    }
                 }
             }
             Console.ReadLine();
